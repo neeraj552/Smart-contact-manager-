@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base ::parent(~{::#content},~{::title},~{::script})}">
+<head>
+  <meta charset="UTF-8">
+  <title data-th-text="${loggedInUser.name} + '| SCM'"></title>
+  <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css"  rel="stylesheet" />
+  <link rel="stylesheet" data-th-href="@{'/css/output.css'}"/>
+  <style>
+
+  </style>
+</head>
+<body>
+<div id="content">
+  <!-- is user loged in :sidebar-->
+  <div th:if="${loggedInUser}">
+    <div data-th-replace="~{user/sidebar :: Sidebar}"></div>
+  </div>
+
+
+  <div  class="pl-64 pt-16 mt-4" style="height: 1000px">
+    <h1 class="text-5xl flex justify-center">welcome to DashBoard page</h1>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+<script>
+  console.log("Home page");
+</script>
+
+</body>
+</html>
